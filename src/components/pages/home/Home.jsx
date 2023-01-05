@@ -12,7 +12,9 @@ function Home() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get('/posts' + search);
+      const res = await axios.get(
+        'https://wicked-buckle-pig.cyclic.app/posts' + search
+      );
       setPosts(res.data);
     };
     fetchPosts();

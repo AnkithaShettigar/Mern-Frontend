@@ -30,11 +30,14 @@ function Settings() {
       data.append('file', file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post('/upload', data);
+        await axios.post('https://wicked-buckle-pig.cyclic.app/upload', data);
       } catch (error) {}
     }
     try {
-      const res = await axios.put('/users/' + user._id, updatedUser);
+      const res = await axios.put(
+        'https://wicked-buckle-pig.cyclic.app/users/' + user._id,
+        updatedUser
+      );
       setSuccess(true);
       dispatch({ type: 'UPDATE_SUCCESS', payload: res.data });
     } catch (error) {

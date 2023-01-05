@@ -14,11 +14,14 @@ function Register() {
     setError(false);
 
     try {
-      const res = await axios.post('/auth/register', {
-        username,
-        email,
-        password,
-      });
+      const res = await axios.post(
+        'https://wicked-buckle-pig.cyclic.app/auth/register',
+        {
+          username,
+          email,
+          password,
+        }
+      );
       console.log(res);
 
       res.data && window.location.replace('/login');
